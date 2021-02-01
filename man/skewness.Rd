@@ -7,10 +7,14 @@
 skewness(x, sample = FALSE, na.rm = FALSE)
 }
 \arguments{
-\item{na.rm}{}
+\item{x}{numerical vector.}
+
+\item{sample}{logical. Compute sample skewness or apply correction?}
+
+\item{na.rm}{logical. Should missing values be removed?}
 }
 \value{
-The skewness
+The value of the skewness. If \verb!sample = FALSE! a correction for sample size is applied.
 }
 \description{
 Skewness

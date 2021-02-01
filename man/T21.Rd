@@ -4,7 +4,9 @@
 \name{T21}
 \alias{T21}
 \title{Trisomy 21 data}
-\format{Data frame}
+\format{
+Data frame
+}
 \usage{
 data(T21)
 }

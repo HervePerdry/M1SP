@@ -4,7 +4,9 @@
 \name{Galton}
 \alias{Galton}
 \title{Galton Height Data}
-\format{Data frame}
+\format{
+Data frame
+}
 \usage{
 data(Galton)
 }

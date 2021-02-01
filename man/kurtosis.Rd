@@ -7,10 +7,16 @@
 kurtosis(x, excess.kurtosis = FALSE, sample = FALSE, na.rm = FALSE)
 }
 \arguments{
-\item{na.rm}{}
+\item{x}{numerical vector.}
+
+\item{excess.kurtosis}{logical. Compute excess kurtosis instead of kurtosis?}
+
+\item{sample}{logical. Compute sample kurtosis or apply correction?}
+
+\item{na.rm}{logical. Should missing values be removed?}
 }
 \value{
-The kurtosis
+The value of the (excess) kurtosis. If \verb!sample = FALSE! a correction for sample size is applied.
 }
 \description{
 Kurtosis

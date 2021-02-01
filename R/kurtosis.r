@@ -1,11 +1,11 @@
 #' Kurtosis
 #'
-#' @param x
-#' @param excess.kurtosis
-#' @param sample
-#' @param na.rm
+#' @param x numerical vector.
+#' @param excess.kurtosis logical. Compute excess kurtosis instead of kurtosis?
+#' @param sample logical. Compute sample kurtosis or apply correction?
+#' @param na.rm logical. Should missing values be removed?
 #'
-#' @return The kurtosis
+#' @return The value of the (excess) kurtosis. If \verb!sample = FALSE! a correction for sample size is applied.
 #' @export
 #'
 #' @examples

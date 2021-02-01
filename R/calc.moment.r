@@ -1,16 +1,18 @@
 
 calc.moment <- function(x, moment, sample = FALSE, na.rm = FALSE) {
   if(is.matrix(x))
-    apply(x, 2, calc.moment, moment = moment)
+    apply(x, 2, calc.moment, moment = moment, sample = sample, na.rm = na.rm)
   else if(is.data.frame(x))
-    sapply(x, calc.moment, moment = moment)
+    sapply(x, calc.moment, moment = moment, sample = sample, na.rm = na.rm)
   else {
-    x <- as.vector(x)
+    x <- as.double(x)
     b <- is.na(x)
-    if(na.rm)
-      x <- x[!b]
-    else if(any(b))
-      return(NA_real_)
+    if(any(b)) {
+      if(na.rm)
+        x <- x[!b]
+      else
+       return(NA_real_)
+    }
 
     n <- length(x)
     m <- mean(x)
