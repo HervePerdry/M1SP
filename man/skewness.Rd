@@ -14,8 +14,14 @@ skewness(x, sample = FALSE, na.rm = FALSE)
 \item{na.rm}{logical. Should missing values be removed?}
 }
 \value{
-The value of the skewness. If \verb!sample = FALSE! a correction for sample size is applied.
+The value of the skewness. If \code{sample = FALSE} a correction for sample size is applied.
 }
 \description{
 Skewness
+}
+\examples{
+# skewness of the height in EUR2170 data
+skewness(EUR2170$height, sample = TRUE)
+# adults only
+skewness(EUR2170$height[EUR2170$age > 20], sample = TRUE)
 }

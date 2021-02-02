@@ -3,7 +3,7 @@
 \docType{data}
 \name{EUR2170}
 \alias{EUR2170}
-\title{European 2170 data}
+\title{European individuals biometrical data}
 \format{
 Data frame
 }

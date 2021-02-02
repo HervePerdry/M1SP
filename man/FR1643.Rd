@@ -3,7 +3,7 @@
 \docType{data}
 \name{FR1643}
 \alias{FR1643}
-\title{French 1643 data}
+\title{French individuals biometrical data}
 \format{
 Data frame
 }

@@ -3,7 +3,7 @@
 \docType{data}
 \name{T21}
 \alias{T21}
-\title{Trisomy 21 data}
+\title{Trisomy 21}
 \format{
 Data frame
 }
