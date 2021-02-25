@@ -1,3 +1,15 @@
+#' Random St. Petersburg Paradox lottery draws
+#'
+#' @param size the number of draws
+#' @param log2 Logical. If \code{TRUE}, returns log2 of results
+#'
+#' @details In this lottery, the gain is 1 with a probability 1/2,
+#' 2 with probability 1/4, 4 with probability 1/8, and so on.
+#'
+#' @return a vector of length \code{size}.
+#' @export
+#'
+#' @examples
 rstpet <- function(size, log2 = FALSE) {
   S <- list()
   k <- 0

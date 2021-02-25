@@ -1,2 +1,5 @@
-
+-- exporter rstpet
++ means <- plot(means(x), type = "l")
 -- fonction pour courbe ROC (T21)
+-- tirages dans la loi proportionnelle à 1/k**2
+-- fction pour moyennes successives
