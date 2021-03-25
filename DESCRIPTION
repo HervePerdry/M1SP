@@ -1,7 +1,7 @@
 Package: M1SP
 Type: Package
 Title: Examples for the Master 1 de Santé Publique
-Version: 0.5
+Version: 0.6
 Author: Hervé Perdry
 Maintainer: Hervé Perdry <herve.perdry@universite-paris-saclay.fr>
 Description: Quelques exemples pour le cours de M1.

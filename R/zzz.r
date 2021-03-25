@@ -129,3 +129,20 @@ NULL
 #' Mémoires de la société établie à Genève pour l'encouragement des arts et de l'agriculture, 1780.
 #' \url{https://books.google.fr/books?id=cBUGAAAAQAAJ&pg=PA144}
 NULL
+
+#' Ribe Cemetry Anthropological Data
+#'
+#' This table gives data from the Ribe Cemetry in Denmark, including the sex of individuals,
+#' an estimation of their age, both femurs length, their height, and an indicator variable
+#' of hypoplasia, estimated from theeth enamel possible.
+#'
+#' @docType data
+#' @name Ribe
+#' @aliases Ribe
+#' @usage data(Ribe)
+#' @format Data frame
+#' @references Mette Wod, Height Estimation from Skeletal Remains, 2008. 
+#' \url{http://www.adbou.dk/fileadmin/adbou/projektopgaver/ADBOU_linear_regression_Mette_Wodx.pdf}
+#' \url{http://mirror.aidoh.dk/mettewod/wod.zip}
+NULL
+
