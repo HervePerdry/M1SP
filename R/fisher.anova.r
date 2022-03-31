@@ -3,7 +3,8 @@
 #' @param formula an object of class formula.
 #' @param data an optional data frame containing the variables in the model.
 #'
-#' @details This functions performs a one-way Fisher anova.
+#' @details This functions performs a one-way Fisher anova. Only
+#' for pedagogical illustration, use \code{aov} for your analyses.
 #'
 #' @return \code{fisher.anova} returns an object of class \code{"fisher.anova"}, which
 #' is pretty-printed in a traditional way.
