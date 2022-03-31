@@ -1,4 +1,3 @@
-
 #' Confidence interval for the binomial parameter p
 #'
 #' @param x number of successes
@@ -7,15 +6,21 @@
 #' @param conf.level confidence level for the returned confidence interval
 #' @param correct a logical indicating whether continuity correction should be applied
 #'
-#' @details The Wilson and Clopper-Pearson procedures are obtained using \code{prop.test}
+#' @details The Wald procedure is the textbook procedure for confidence intervals.
+#' Arcsine procedure is obtained through the variance stabilizing transformation \eqn{arcsine(sqrt(p))}.
+#' Wilson and Clopper-Pearson procedures are obtained through the functions \code{prop.test}
 #' and \code{binom.test} respectively.
 #'
-#' @return
+#' @return a numeric vector of length 2, giving the bounds of the confidence interval
 #' @export
 #'
 #' @examples
+#' binom.conf.int(4, 10, "wald")
+#' binom.conf.int(4, 10, "wilson")
+#' binom.conf.int(4, 10, "arcsine")
+#' binom.conf.int(4, 10, "clopper")
 binom.conf.int <- function(x, n, proc = c("wald", "arcsine", "wilson", "clopper-pearson"), conf.level = 0.95, correct = FALSE) {
-  method <- match.arg(method)
+  method <- match.arg(proc)
   if(method == "wilson")
     return( prop.test(x, n, conf.level = conf.level, correct = correct)$conf.int )
   if(method == "clopper-pearson") {

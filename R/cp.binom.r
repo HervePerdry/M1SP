@@ -31,17 +31,19 @@
 #' p <- seq(0,1,length=501)
 #' P.wald.10 <- cp.binom(10, p, "wald", correct = TRUE)
 #' P.arcs.10 <- cp.binom(10, p, "arcs", correct = TRUE)
-#' P.wald.50 <- cp.binom(50, p, "wald", correct = TRUE)
-#' P.arcs.50 <- cp.binom(50, p, "arcs", correct = TRUE)
-#' par(mfrow = c(1,2))
 #' plot(p, P.wald.10$cov.prob, ylim = c(0.5,1), type = "l", main = "n = 10",
 #'      ylab = "coverage probability")
 #' lines(p, P.arcs.10$cov.prob, col = "red")
 #' abline(h = 0.95, lty = 3)
+#' legend(0.4, 0.6, c("Wald", "Arcsine"), lty = 1, col = c("black", "red"), bty = "n")
+#'
+#' P.wald.50 <- cp.binom(50, p, "wald", correct = TRUE)
+#' P.arcs.50 <- cp.binom(50, p, "arcs", correct = TRUE)
 #' plot(p, P.wald.50$cov.prob, ylim = c(0.5,1), type = "l", main = "n = 50",
 #'      ylab = "coverage probability")
 #' lines(p, P.arcs.50$cov.prob, col = "red")
 #' abline(h = 0.95, lty = 3)
+#' legend(0.4, 0.6, c("Wald", "Arcsine"), lty = 1, col = c("black", "red"), bty = "n")
 
 cp.binom <- function(n, p, CI = c("wald", "wilson", "clopper-pearson", "arcsine"), ...) {
   if(is.character(CI)) {
