@@ -2,24 +2,29 @@
 % Please edit documentation in R/binom.conf.int.r
 \name{binom.conf.int}
 \alias{binom.conf.int}
-\title{Title}
+\title{Confidence interval for the binomial parameter p}
 \usage{
 binom.conf.int(
   x,
   n,
-  method = c("wald", "arcsine", "wilson", "clopper-pearson"),
+  proc = c("wald", "arcsine", "wilson", "clopper-pearson"),
   conf.level = 0.95,
   correct = FALSE
 )
 }
 \arguments{
-\item{correct}{}
-}
-\value{
+\item{x}{number of successes}
 
+\item{n}{number of Bernoulli trials}
+
+\item{proc}{which confidence interval procedure to use}
+
+\item{conf.level}{confidence level for the returned confidence interval}
+
+\item{correct}{a logical indicating whether continuity correction should be applied}
 }
 \description{
-Title
+Confidence interval for the binomial parameter p
 }
 \details{
 The Wilson and Clopper-Pearson procedures are obtained using \code{prop.test}

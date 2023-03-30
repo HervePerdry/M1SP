@@ -8,8 +8,6 @@
 #'
 #' @return a vector of length \code{size}.
 #' @export
-#'
-#' @examples
 rstpet <- function(size, log2 = FALSE) {
   S <- list()
   k <- 0

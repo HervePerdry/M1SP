@@ -10,10 +10,7 @@
 #' @details The Wilson and Clopper-Pearson procedures are obtained using \code{prop.test}
 #' and \code{binom.test} respectively.
 #'
-#' @return
 #' @export
-#'
-#' @examples
 binom.conf.int <- function(x, n, proc = c("wald", "arcsine", "wilson", "clopper-pearson"), conf.level = 0.95, correct = FALSE) {
   method <- match.arg(method)
   if(method == "wilson")

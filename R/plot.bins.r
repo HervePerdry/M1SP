@@ -10,7 +10,7 @@
 #' @param text.cex \code{cex} parameter for printing the frequencies
 #' @param ... extra parameters for \code{image}
 #'
-#' @details plot a
+#' @details plots a heatmap of discretized data 
 #' @return NULL
 #' @export
 #'

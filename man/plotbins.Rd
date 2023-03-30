@@ -39,7 +39,7 @@ plotbins(
 Plotting a heatmap for 2D data
 }
 \details{
-plot a
+plots a heatmap of discretized data
 }
 \examples{
 x <- rnorm(500)

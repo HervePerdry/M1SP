@@ -7,7 +7,7 @@
 cp.binom(n, p, CI = c("wald", "wilson", "clopper-pearson", "arcsine"), ...)
 }
 \arguments{
-\item{n}{first parameter of the binomial (number of Bernoulli draws)}
+\item{n}{first parameter of the binomial (number of Bernoulli trials)}
 
 \item{p}{second parameter of the binomial (probability of success)}
 

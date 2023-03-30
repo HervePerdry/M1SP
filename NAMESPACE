@@ -3,6 +3,7 @@
 S3method(print,fisher.anova)
 export(ROC)
 export(binom.conf.int)
+export(binom.prediction)
 export(cp.binom)
 export(fisher.anova)
 export(kurtosis)
