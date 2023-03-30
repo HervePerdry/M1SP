@@ -23,10 +23,21 @@ binom.conf.int(
 
 \item{correct}{a logical indicating whether continuity correction should be applied}
 }
+\value{
+a numeric vector of length 2, giving the bounds of the confidence interval
+}
 \description{
 Confidence interval for the binomial parameter p
 }
 \details{
-The Wilson and Clopper-Pearson procedures are obtained using \code{prop.test}
+The Wald procedure is the textbook procedure for confidence intervals.
+Arcsine procedure is obtained through the variance stabilizing transformation \eqn{arcsine(sqrt(p))}.
+Wilson and Clopper-Pearson procedures are obtained through the functions \code{prop.test}
 and \code{binom.test} respectively.
+}
+\examples{
+binom.conf.int(4, 10, "wald")
+binom.conf.int(4, 10, "wilson")
+binom.conf.int(4, 10, "arcsine")
+binom.conf.int(4, 10, "clopper")
 }

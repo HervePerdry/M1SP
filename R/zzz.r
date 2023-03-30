@@ -134,7 +134,7 @@ NULL
 #'
 #' This table gives data from the Ribe Cemetry in Denmark, including the sex of individuals,
 #' an estimation of their age, both femurs length, their height, and an indicator variable
-#' of hypoplasia, estimated from theeth enamel possible.
+#' of hypoplasia, estimated from teeth enamel when possible.
 #'
 #' @docType data
 #' @name Ribe

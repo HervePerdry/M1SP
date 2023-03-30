@@ -19,7 +19,8 @@ is pretty-printed in a traditional way.
 One-Way Fisher Anova
 }
 \details{
-This functions performs a one-way Fisher anova.
+This functions performs a one-way Fisher anova. Only
+for pedagogical illustration, use \code{aov} for your analyses.
 }
 \examples{
 fisher.anova(Time ~ Groupe, Clearance)
