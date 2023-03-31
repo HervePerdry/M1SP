@@ -58,7 +58,7 @@ cp.binom <- function(n, p, CI = c("wald", "wilson", "clopper-pearson", "arcsine"
   } else if(length(n) > 1) {
     r <- sapply(n, cp.binom.0, p = p, CI = CI, ...)
   } else {
-    r <- cp.binom.0(n, p, CI, ...)
+    r <- as.matrix(cp.binom.0(n, p, CI, ...))
   }
   data.frame(n = n, p = p, cov.prob = r["cov.prob",],
              mean.width = r["mean.width",])
