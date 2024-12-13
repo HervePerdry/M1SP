@@ -146,3 +146,19 @@ NULL
 #' \url{http://mirror.aidoh.dk/mettewod/wod.zip}
 NULL
 
+#' Wedderburn Barley data
+#'
+#' This table gives data from Wedderburn's 1974 paper (Quasi-likelihood functions,
+#' generalized linear models, and the Gauss-Newton method). It is the
+#' the percentage leaf area of barley infected by the fungus R. Secalis (leaf blotch) for 10 different
+#' varieties grown at 9 different sites in a variety trial in 1965. This data
+#' was found in an unblished thesis of J. F. Jenkin.
+#'
+#' @docType data
+#' @name barley
+#' @aliases barley
+#' @usage data(barley)
+#' @format Data frame
+#' @references Wedderburn, Quasi-likelihood functions, generalized linear models, and the Gauss-Newton method, Biometrika, 1974.
+NULL
+
