@@ -66,23 +66,17 @@ cp.binom <- function(n, p, CI = c("wald", "wilson", "clopper-pearson", "arcsine"
 
 cp.binom.0 <- function(n, p, CI, ...) {
   X <- 0:n
-  f <- function(x) {
-    res <- CI(x, n = n, ...)
-    if(is.list(res))
-      res$conf.int
-    else
-      res
-  }
-  R <- data.frame( t(sapply(X, f) ))
+  R <- data.frame(CI(X, n, ...))
   cov.prob <- numeric(length(p))
   mean.width <- numeric(length(p))
   for(i in seq_along(p)) {
     P <- dbinom(X, n, p[i])
-    cov.prob[i] <- sum( P * (R$X1 <= p[i] & p[i] <= R$X2) )
-    mean.width[i] <- sum(P * (R$X2 - R$X1))
+    cov.prob[i] <- sum( P * (R$lower <= p[i] & p[i] <= R$upper) )
+    mean.width[i] <- sum(P * (R$upper - R$lower))
   }
   if(length(p) > 1)
     rbind(cov.prob = cov.prob, mean.width = mean.width)
   else
     c(cov.prob = cov.prob, mean.width = mean.width)
 }
+

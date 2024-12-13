@@ -22,12 +22,24 @@
 #' @export
 binom.conf.int <- function(x, n, proc = c("wald", "arcsine", "wilson", "clopper-pearson"), conf.level = 0.95, correct = FALSE) {
   method <- match.arg(proc)
+  if(length(n) > 1 & length(x) > 1) {
+    A <- mapply(binom.conf.int, x = 0:10, n = 10:20)
+    return(cbind(x = x, n = n, t(A)))
+  }
+  if(length(n) > 1) {
+    A <- sapply(n, \(m) binom.conf.int(x, m, method, conf.level, correct))
+    return(cbind(x = x, n = n, t(A)))
+  }
+  if(length(x) > 1) {
+    A <- sapply(x, binom.conf.int, n = n, proc = method, conf.level = conf.level, correct = correct)
+    return(cbind(x = x, n = n, t(A)))
+  }
   if(method == "wilson")
-    return( prop.test(x, n, conf.level = conf.level, correct = correct)$conf.int )
+    IC <- as.vector(prop.test(x, n, conf.level = conf.level, correct = correct)$conf.int)
   if(method == "clopper-pearson") {
     if(correct)
       warning("correct = TRUE is ignored for clopper-pearson confidence interval")
-    return( binom.test(x, n, conf.level = conf.level)$conf.int )
+    IC <- as.vector(binom.test(x, n, conf.level = conf.level)$conf.int)
   }
   p <- x/n
   z <- qnorm(.5 + conf.level/2)
@@ -36,13 +48,15 @@ binom.conf.int <- function(x, n, proc = c("wald", "arcsine", "wilson", "clopper-
     hi <- p + z*sqrt(p*(1-p)/n)
     lo <- if(correct) lo - .5/n else lo
     hi <- if(correct) hi + .5/n else hi
-    return( c(max(0, lo), min(1, hi)) )
+    IC <- c(max(0, lo), min(1, hi))
   }
   if(method == "arcsine") {
     p.lo <- if(correct) p - 0.5/n else p
     p.hi <- if(correct) p + 0.5/n else p
     lo <- if(p == 0) 0 else sin(asin(sqrt(p.lo)) - 0.5*z/sqrt(n))**2
     hi <- if(p == 1) 1 else sin(asin(sqrt(p.hi)) + 0.5*z/sqrt(n))**2
-    return( c(lo, hi) )
+    IC <- c(lo, hi)
   }
+  names(IC) <- c("lower", "upper")
+  IC
 }
